@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.inspur.spring.StudentMapper">
+	
+	<resultMap type="Student" id="stuRusultMap">
+		<id column="stu_id" property="stuId"/>
+		<result column="stu_name" property="stuName"/>
+		<result column="stu_birthday" property="stuBirthday"/>
+		<result column="stu_phone" property="stuPhone"/>
+	</resultMap>
+	<insert id="insertStu" parameterType="com.inspur.spring.Student">
+		insert into student(stu_id,stu_name,stu_phone,stu_birthday)values(#{stuId},#{stuName},#{stuPhone},#{stuBirthday,jdbcType=DATE})
+	</insert>
+	
+	<select id="selectAll" resultMap="stuRusultMap" >
+		select * from student
+	</select>
+	<!-- 带有查询条件，指定 parameter的类型-->
+	<select id="selectById" resultMap="stuRusultMap" parameterType="java.lang.Integer">
+		select * from student where stu_id=#{abc}
+	</select>
+	
+	<!-- 查询时返回单一的值 -->
+	<select id="getCount" resultType="java.lang.Integer" >
+		select count(*) from student
+	</select>
+	
+	<!-- 可以让查询的每条记录放在Map对象中 -->
+	<select id="selectMap" resultType="java.util.Map">
+		select * from student
+	</select>
+	<update id="updateById" parameterType="Student">
+		update student set stu_name=#{stuName} where stu_id=#{stuId}
+	</update>
+	
+	<delete id="deleteById" parameterType="java.lang.Integer">
+		delete from student where stu_id=#{a}
+	</delete>
+	<!-- 如果列名与bean中的属性名一致时，可以直接用resultType指定具体的类，mybatis自动将记录转换为bean -->
+	<select id="selectAll1" resultType="Student" >
+		select stu_id as stuId,stu_name as stuName,stu_phone as stuPhone from student
+	</select>
+	
+	<!-- 传入参数，可以为map类型 -->
+	<select id="selectAllByMap" resultMap="stuRusultMap" parameterType="java.util.Map" >
+		select * from student where stu_name=#{name}
+	</select>
+	
+	<!-- ${},不会进行预编译，而是直接进行字符串的替换 -->
+	<select id="selectAllByMapOrderby" resultMap="stuRusultMap" parameterType="java.util.Map" >
+		select * from student where stu_name=#{name} order by ${orderby}
+	</select>
+	
+	<select id="searchStu" resultMap="stuRusultMap" parameterType="Student">
+		select * from student where 1=1
+		
+		<if test="stuName!=null">
+			and stu_name like #{stuName}||'%'
+		</if>
+		<if test="stuPhone!=null">
+			and stu_phone like #{stuPhone}||'%'
+		</if>
+	</select>
+	
+	<select id="searchStuChoose" resultMap="stuRusultMap" parameterType="Student">
+		select * from student where 1=1
+		
+		<choose>
+			<when test="stuName!=null">
+				and stu_name like #{stuName}||'%'
+			</when>
+			<when test="stuPhone!=null">
+				and stu_phone like #{stuPhone}||'%'
+			</when>
+			<otherwise>
+				<![CDATA[and stu_birthday<#{stuBirthday}]]>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="searchStuWhere" resultMap="stuRusultMap" parameterType="Student">
+		select * from student
+		
+		<where>
+			<if test="stuName!=null">
+			and stu_name like #{stuName}||'%'
+			</if>
+			<if test="stuPhone!=null">
+			and stu_phone like #{stuPhone}||'%'
+			</if>
+		</where>
+	</select>
+	
+	<select id="searchStuTrim" resultMap="stuRusultMap" parameterType="Student">
+		select * from student
+		
+		<trim prefix="where" prefixOverrides="and|or">
+			<if test="stuName!=null">
+			and stu_name like #{stuName}||'%'
+			</if>
+			<if test="stuPhone!=null">
+			and stu_phone like #{stuPhone}||'%'
+			</if>
+		</trim>
+	</select>
+	<update id="updateStuTrim" parameterType="Student">
+		update student 
+		<trim prefix="set" suffixOverrides=",">
+			<if test="stuName!=null">
+				stu_name=#{stuName},
+			</if>
+			<if test="stuPhone!=null">
+				stu_phone=#{stuPhone},
+			</if>
+		</trim>
+		where stu_id=#{stuId}
+	</update>
+	<select id="selectByCollection" resultMap="stuRusultMap" parameterType="java.util.Map"  >
+		select * from student where stu_id in
+		<foreach collection="ids" open="(" close=")" separator="," item="stuid">
+			#{stuid}
+		</foreach>
+	</select>
+	
+	<!-- 如果传入的参数是List类型，直接使用“list”访问参数内容 -->
+	<select id="selectByCollection1" resultMap="stuRusultMap"   >
+		select * from student where stu_id in
+		<foreach collection="list" open="(" close=")" separator="," item="stuid">
+			#{stuid}
+		</foreach>
+	</select>
+	
+	<!-- 如果传入的参数是array类型，直接使用“array”访问参数内容 -->
+	<select id="selectByCollection2" resultMap="stuRusultMap"   >
+		select * from student where stu_id in
+		<foreach collection="array" open="(" close=")" separator="," item="stuid">
+			#{stuid}
+		</foreach>
+	</select>
+	
+	<update id="updateStuSet" parameterType="Student">
+		update student 
+		<set>
+			<if test="stuName!=null">
+				stu_name=#{stuName},
+			</if>
+			<if test="stuPhone!=null">
+				stu_phone=#{stuPhone},
+			</if>
+		</set>
+		where stu_id=#{stuId}
+	</update>
+</mapper>
+
+

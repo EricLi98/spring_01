@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<!-- 实体类的别名-->
+	<typeAliases>
+		<!--mybatis会自动给包内的每个bean设置一个别名:使用原有类名并将首字母小写  -->
+		<package name="com.inspur.spring.bean"></package>
+	</typeAliases>
+	 	
+	
+	
+</configuration>
+
+
+

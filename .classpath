@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.7.0_71"/>
+	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.lib.spring3.MYECLIPSE_SPRING30_CORE"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/aop/com.springsource.net.sf.cglib-2.2.0.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/aop/com.springsource.org.aopalliance-1.0.0.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/aop/com.springsource.org.aspectj.weaver-1.6.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/aop/org.springframework.aop-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/aop/org.springframework.aspects-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/aop/org.springframework.instrument.tomcat-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/aop/org.springframework.instrument-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/persistJdbc/com.springsource.com.mchange.v2.c3p0-0.9.1.2.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/persistJdbc/com.springsource.org.apache.commons.lang-2.4.0.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/persistJdbc/com.springsource.org.apache.commons.pool-1.5.3.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/persistJdbc/commons-dbcp.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/persistJdbc/jotm.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/persistJdbc/xapool.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/persistCore/org.springframework.jdbc-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/persistCore/org.springframework.orm-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/persistCore/org.springframework.transaction-3.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="E:/MyEclipse/MyEclipse 10/configuration/org.eclipse.osgi/bundles/98/1/.cp/data/3.0/lib/persistCore/persistence.jar"/>
+	<classpathentry kind="lib" path="/sp01/lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis-3.2.7.jar"/>
+	<classpathentry kind="lib" path="lib/mybatis-spring-1.2.2.jar"/>
+	<classpathentry kind="lib" path="/springtest/lib/ojdbc14.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
