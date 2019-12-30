@@ -10,7 +10,7 @@
 	<!-- 使用构造器注入 -->
 	<bean class="com.inspur.spring.Chinese" id="chinese">
 		<constructor-arg name="axe" ref="stoneAxe"></constructor-arg>
-		<!-- 对于基本类型的值，使用value属性进行注入 -->
+		<!-- 对于基本类型的值，使用value属性进行 注入 -->
 		<property name="name" value="Zhang"></property>
 	</bean>
 </beans>
